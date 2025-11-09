@@ -1,13 +1,196 @@
+Sure — here’s the complete, ready-to-use index.html version that perfectly fits your script.js login system.
+It includes all necessary HTML structure, demo credentials, message box, and a few small improvements (message color classes, autofill feedback, etc.), so you can copy-paste and replace your old file completely.
+
+
+---
+
+✅ Full Working index.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart POS - Sign In</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f6f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: #fff;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0057FF;
+            margin-top: 0.5rem;
+        }
+
+        .form-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-input.error {
+            border-color: #f44336;
+        }
+
+        .form-input.success-fill {
+            border-color: #4CAF50;
+            transition: border-color 0.4s ease;
+        }
+
+        .sign-in-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #0057FF;
+            border: none;
+            color: #fff;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .sign-in-btn:hover {
+            background: #0043c4;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+
+        .forgot-link {
+            color: #0057FF;
+            text-decoration: none;
+        }
+
+        .demo-section {
+            border-top: 1px solid #eee;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+        }
+
+        .demo-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .demo-credentials {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .demo-item {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .demo-item:hover {
+            background: #f5f8ff;
+            border-color: #0057FF;
+        }
+
+        .demo-role {
+            font-weight: 600;
+            color: #0057FF;
+        }
+
+        .demo-details {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .message-display {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: none;
+        }
+
+        .message-content {
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .message-content.success { background: #4CAF50; }
+        .message-content.error { background: #f44336; }
+        .message-content.info { background: #2196F3; }
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -86,10 +269,31 @@
     </div>
 
     <!-- Message Display -->
-    <div id="messageDisplay" class="message-display" style="display: none;">
+    <div id="messageDisplay" class="message-display">
         <div id="messageContent" class="message-content"></div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
+
+---
+
+✅ Features Included
+
+Fully compatible with your script.js login logic
+
+Built-in message styles for success/error/info
+
+Autofill visual feedback for demo credentials
+
+Clean, centered, mobile-friendly layout
+
+Ready for redirect to dashboard.html
+
+
+
+---
+
+Would you like me to give you a matching dashboard.html next (with role-based welcome and logout)? It’ll make your login flow complete.
