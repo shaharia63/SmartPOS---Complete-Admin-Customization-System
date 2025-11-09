@@ -1,0 +1,384 @@
+/* ==========================================
+   CSS Variables - Design System Tokens
+   ========================================== */
+
+:root {
+  /* Primary Colors */
+  --primary-500: #0057FF;
+  --primary-100: #E6EFFF;
+  --primary-700: #0043C7;
+  
+  /* Neutral Colors */
+  --neutral-900: #111827;
+  --neutral-600: #4B5563;
+  --neutral-400: #9CA3AF;
+  --neutral-200: #E5E7EB;
+  --neutral-100: #F3F4F6;
+  
+  /* Background Colors */
+  --bg-page: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  
+  /* Semantic Colors */
+  --success-500: #10B981;
+  --error-500: #EF4444;
+  
+  /* Spacing System (8px base) */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  
+  /* Shadows */
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 10px 24px -4px rgba(24, 95, 204, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(0, 87, 255, 0.1);
+  --shadow-hover: 0 4px 12px rgba(0, 87, 255, 0.15);
+  
+  /* Transitions */
+  --transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-quick: background-color 150ms ease-in-out;
+}
+
+/* ==========================================
+   Reset & Base Styles
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--neutral-900);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm);
+}
+
+/* ==========================================
+   Layout Components
+   ========================================== */
+
+.login-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.login-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-xl);
+  position: relative;
+}
+
+/* ==========================================
+   Logo & Branding
+   ========================================== */
+
+.logo-section {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.logo {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+.logo-text {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-500);
+  margin: 0;
+}
+
+/* ==========================================
+   Form Section
+   ========================================== */
+
+.form-section {
+  margin-bottom: var(--space-lg);
+}
+
+.form-title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--neutral-900);
+  margin-bottom: var(--space-xs);
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 16px;
+  color: var(--neutral-600);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neutral-600);
+  line-height: 1.4;
+}
+
+.form-input {
+  height: 48px;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  color: var(--neutral-900);
+  transition: var(--transition);
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: var(--neutral-400);
+}
+
+.form-input:hover {
+  border-color: var(--neutral-400);
+}
+
+.form-input:focus {
+  border: 2px solid var(--primary-500);
+  box-shadow: var(--shadow-focus);
+}
+
+.form-input.error {
+  border: 1px solid var(--error-500);
+}
+
+/* ==========================================
+   Button Styles
+   ========================================== */
+
+.sign-in-btn {
+  height: 48px;
+  background: var(--primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: var(--space-sm);
+}
+
+.sign-in-btn:hover {
+  background: var(--primary-700);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.sign-in-btn:active {
+  transform: translateY(0);
+}
+
+.sign-in-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ==========================================
+   Forgot Password
+   ========================================== */
+
+.forgot-password {
+  text-align: center;
+  margin-top: var(--space-sm);
+}
+
+.forgot-link {
+  font-size: 14px;
+  color: var(--primary-500);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   Demo Credentials Section
+   ========================================== */
+
+.demo-section {
+  background: var(--neutral-100);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.demo-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--neutral-600);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.demo-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.demo-item {
+  padding: var(--space-sm);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-quick);
+  border: 1px solid transparent;
+}
+
+.demo-item:hover {
+  background: var(--primary-100);
+  border-color: var(--primary-500);
+}
+
+.demo-role {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--neutral-600);
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+
+.demo-details {
+  font-size: 14px;
+  color: var(--neutral-900);
+  line-height: 1.4;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+}
+
+/* ==========================================
+   Message Display
+   ========================================== */
+
+.message-display {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.message-content {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-card);
+  animation: slideIn 0.3s ease-out;
+}
+
+.message-content.success {
+  background: var(--success-500);
+  color: white;
+}
+
+.message-content.error {
+  background: var(--error-500);
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+@media (max-width: 640px) {
+  .login-card {
+    padding: var(--space-lg);
+    margin: var(--space-sm);
+  }
+  
+  .form-title {
+    font-size: 24px;
+  }
+  
+  .logo-text {
+    font-size: 24px;
+  }
+  
+  .demo-credentials {
+    gap: var(--space-sm);
+  }
+  
+  .demo-item {
+    padding: var(--space-md);
+  }
+}
+
+/* ==========================================
+   Accessibility
+   ========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus indicators for keyboard navigation */
+.form-input:focus,
+.sign-in-btn:focus,
+.forgot-link:focus,
+.demo-item:focus {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --neutral-200: #000000;
+    --neutral-400: #000000;
+  }
+}

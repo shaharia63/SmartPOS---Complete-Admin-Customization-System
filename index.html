@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart POS - Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Logo/Branding -->
+            <div class="logo-section">
+                <div class="logo">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="12" fill="#0057FF"/>
+                        <path d="M12 16h24v4H12v-4zm0 8h24v4H12v-4zm0 8h16v4H12v-4z" fill="white"/>
+                        <circle cx="36" cy="12" r="4" fill="white"/>
+                    </svg>
+                </div>
+                <h1 class="logo-text">Smart POS</h1>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-section">
+                <h2 class="form-title">Sign in to your account</h2>
+                <p class="form-subtitle">Welcome back! Please enter your details.</p>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            class="form-input" 
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="sign-in-btn">
+                        Sign In
+                    </button>
+
+                    <div class="forgot-password">
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Demo Credentials -->
+            <div class="demo-section">
+                <h3 class="demo-title">Demo Credentials</h3>
+                <div class="demo-credentials">
+                    <div class="demo-item" data-role="admin">
+                        <div class="demo-role">Admin</div>
+                        <div class="demo-details">admin@admin.com / 12345678</div>
+                    </div>
+                    <div class="demo-item" data-role="cashier">
+                        <div class="demo-role">Cashier</div>
+                        <div class="demo-details">cashier@cashier.com / 12345678</div>
+                    </div>
+                    <div class="demo-item" data-role="salesman">
+                        <div class="demo-role">Salesman</div>
+                        <div class="demo-details">sales@salesman.com / 12345678</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Message Display -->
+    <div id="messageDisplay" class="message-display" style="display: none;">
+        <div id="messageContent" class="message-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

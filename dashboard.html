@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartPOS - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="company-info">
+                <div class="company-logo">F</div>
+                <div class="company-details">
+                    <div class="company-name">Xyz Computers</div>
+                    <div class="user-role">Administrator</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <div class="menu-category">
+                <span class="category-title">MAIN</span>
+            </div>
+            <div class="menu-item active" data-section="dashboard">
+                <i class="fas fa-tachometer-alt"></i>
+                <span>Dashboard</span>
+            </div>
+            <div class="menu-item" data-section="pos">
+                <i class="fas fa-cash-register"></i>
+                <span>Point of Sale</span>
+            </div>
+            <div class="menu-item" data-section="inventory">
+                <i class="fas fa-box"></i>
+                <span>Inventory</span>
+            </div>
+            <div class="menu-item" data-section="customers">
+                <i class="fas fa-users"></i>
+                <span>Customers</span>
+            </div>
+            <div class="menu-item" data-section="suppliers">
+                <i class="fas fa-truck"></i>
+                <span>Suppliers</span>
+            </div>
+            <div class="menu-item" data-section="sales">
+                <i class="fas fa-chart-line"></i>
+                <span>Sales</span>
+            </div>
+            <div class="menu-item" data-section="purchases">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Purchases</span>
+            </div>
+            <div class="menu-item" data-section="expenses">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>Expenses</span>
+            </div>
+            <div class="menu-item" data-section="reports">
+                <i class="fas fa-file-alt"></i>
+                <span>Reports</span>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <div class="menu-category">
+                <span class="category-title">SYSTEM</span>
+            </div>
+            <div class="menu-item" data-section="settings" onclick="window.location.href='admin-settings.html'">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+            <div class="menu-item" data-section="storechange">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Store Change</span>
+            </div>
+            <div class="menu-item" data-section="userchange">
+                <i class="fas fa-user-cog"></i>
+                <span>User Change</span>
+            </div>
+            <div class="menu-item" data-section="backup">
+                <i class="fas fa-database"></i>
+                <span>Backup</span>
+            </div>
+            <div class="menu-item" data-section="logout" onclick="window.location.href='index.html'">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search...">
+                </div>
+                <button class="action-btn" title="Notifications">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="action-btn" title="Profile">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Total Sales</span>
+                        <div class="kpi-icon" style="background: #dbeafe; color: #1d4ed8;">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="totalSales">$12,450</div>
+                    <div class="kpi-change positive">↗ +8.2% from yesterday</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Orders Today</span>
+                        <div class="kpi-icon" style="background: #dcfce7; color: #16a34a;">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="ordersToday">127</div>
+                    <div class="kpi-change positive">↗ +12.5% from yesterday</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Products</span>
+                        <div class="kpi-icon" style="background: #fef3c7; color: #d97706;">
+                            <i class="fas fa-box"></i>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="totalProducts">1,234</div>
+                    <div class="kpi-change positive">↗ +23 new this week</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-header">
+                        <span class="kpi-title">Customers</span>
+                        <div class="kpi-icon" style="background: #f3e8ff; color: #9333ea;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                    <div class="kpi-value" id="totalCustomers">856</div>
+                    <div class="kpi-change positive">↗ +15 new this week</div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="content-grid">
+                <!-- Sales Chart -->
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Sales Overview</h2>
+                        <div class="card-actions">
+                            <button class="btn btn-outline btn-sm">Week</button>
+                            <button class="btn btn-primary btn-sm">Month</button>
+                            <button class="btn btn-outline btn-sm">Year</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="chart-container">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="activity-card">
+                    <div class="card-header">
+                        <h2 class="card-title">Recent Activities</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon success">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">New Sale</div>
+                                    <div class="activity-description">Order #1234 - John Doe</div>
+                                    <div class="activity-time">2 minutes ago</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon info">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Low Stock Alert</div>
+                                    <div class="activity-description">iPhone 15 Pro (5 units left)</div>
+                                    <div class="activity-time">5 minutes ago</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon warning">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">New Customer</div>
+                                    <div class="activity-description">Sarah Wilson registered</div>
+                                    <div class="activity-time">10 minutes ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Actions -->
+            <div class="quick-actions">
+                <button class="action-button primary">
+                    <i class="fas fa-plus"></i>
+                    <span>New Sale</span>
+                </button>
+                <button class="action-button secondary">
+                    <i class="fas fa-box"></i>
+                    <span>Add Product</span>
+                </button>
+                <button class="action-button secondary">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add Customer</span>
+                </button>
+                <button class="action-button secondary" onclick="window.location.href='admin-settings.html'">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <div class="bottom-nav">
+        <button class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-cash-register"></i>
+            <span>POS</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-chart-line"></i>
+            <span>Sales</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-ellipsis-h"></i>
+            <span>More</span>
+        </button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
